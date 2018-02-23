@@ -1,0 +1,44 @@
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+entity AddressBook {
+	title String,
+    userId String
+}
+
+/**
+ * The Employee entity.
+ */
+entity Entry {
+	/**
+	* The firstname attribute.
+	*/
+    userId String,
+	firstName String,
+	lastName String,
+	email String,
+phoneNumber String,
+	streetAddress String,
+	postalCode String,
+	city String,
+	stateProvince String,
+	countryName String
+    }
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+    AddressBook{entries} to Entry
+}
+
+// Set pagination options
+//paginate Profile with infinite-scroll
+//paginate ContactMethod with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+//service all with serviceImpl except Employee, Job
+// Set an angular suffix
+//angularSuffix * with ce
